@@ -60,6 +60,8 @@
 		68FBE6491848A38900749228 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5FC1848A38900749228 /* UIWebView+AFNetworking.m */; };
 		68FBE64B1848A38900749228 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE6001848A38900749228 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68FBE65B1848A92B00749228 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FBE65A1848A92B00749228 /* FacebookSDK.framework */; };
+		68FBE6601848A9F300749228 /* FBFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE65E1848A9F300749228 /* FBFunctionViewController.m */; };
+		68FBE6611848A9F300749228 /* FBFunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +157,9 @@
 		68FBE5FF1848A38900749228 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		68FBE6001848A38900749228 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		68FBE65A1848A92B00749228 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		68FBE65D1848A9F300749228 /* FBFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFunctionViewController.h; sourceTree = "<group>"; };
+		68FBE65E1848A9F300749228 /* FBFunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFunctionViewController.m; sourceTree = "<group>"; };
+		68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBFunctionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +222,7 @@
 		1D5BC8FD18485C9400983B90 /* GreadyValley */ = {
 			isa = PBXGroup;
 			children = (
+				68FBE65C1848A9D200749228 /* NetworkTestbed */,
 				1D5BC9371848670A00983B90 /* LoginView.xib */,
 				1D5BC90618485C9400983B90 /* GVAppDelegate.h */,
 				1D5BC90718485C9400983B90 /* GVAppDelegate.m */,
@@ -374,6 +380,16 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		68FBE65C1848A9D200749228 /* NetworkTestbed */ = {
+			isa = PBXGroup;
+			children = (
+				68FBE65D1848A9F300749228 /* FBFunctionViewController.h */,
+				68FBE65E1848A9F300749228 /* FBFunctionViewController.m */,
+				68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */,
+			);
+			path = NetworkTestbed;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -461,6 +477,7 @@
 				1D84E608184878FA0005BCB8 /* Logo.jpeg in Resources */,
 				1D5BC9381848670A00983B90 /* LoginView.xib in Resources */,
 				1D5BC93218485F6200983B90 /* 0.jpg in Resources */,
+				68FBE6611848A9F300749228 /* FBFunctionViewController.xib in Resources */,
 				1D84E61B184884780005BCB8 /* GVGameViewCrl.xib in Resources */,
 				1D84E62918489EB20005BCB8 /* GVEventViewCrl.xib in Resources */,
 				1D5BC91018485C9400983B90 /* Images.xcassets in Resources */,
@@ -510,6 +527,7 @@
 				1D84E62818489EB20005BCB8 /* GVEventViewCrl.m in Sources */,
 				68FBE60A1848A38900749228 /* AFURLRequestSerialization.m in Sources */,
 				68FBE6071848A38900749228 /* AFNetworkReachabilityManager.m in Sources */,
+				68FBE6601848A9F300749228 /* FBFunctionViewController.m in Sources */,
 				68FBE60B1848A38900749228 /* AFURLResponseSerialization.m in Sources */,
 				68FBE6431848A38900749228 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				1D5BC90818485C9400983B90 /* GVAppDelegate.m in Sources */,
