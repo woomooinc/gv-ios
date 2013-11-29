@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GVCell : UITableViewCell
-
+@property(nonatomic,weak) IBOutlet UIImageView *backImageView;
+@property(nonatomic,weak) IBOutlet UITextView *textView;
 @end

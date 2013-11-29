@@ -22,9 +22,9 @@
 - (void) bulidViewWithPlays:(int) plays{
     CGFloat startX = 80;
     for (int i = 1; plays >= i ; i++) {
-        UIImageView *mainProfile = [[UIImageView alloc] initWithFrame:CGRectMake(startX + (i -1)  * 60, 10, 60, 30)];
+        UIImageView *mainProfile = [[UIImageView alloc] initWithFrame:CGRectMake(startX + (i -1)  * 60, 10, 60, 40)];
         mainProfile.image = [UIImage imageNamed:@"profile.jpg"];
-        UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(startX + (i - 1) * 60 , 40, 60, 10)];
+        UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(startX + (i - 1) * 60 , 50, 60, 10)];
         score.text = @"buzz/100";
         [self addSubview:mainProfile];
         [self addSubview:score];
