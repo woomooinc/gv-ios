@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <FacebookSDK/FacebookSDK.h>
 @interface FBFunctionViewController : UIViewController
+< FBLoginViewDelegate, FBRequestDelegate >
+{
+    NSArray *permissions;
+    NSString *userName;
+    NSString *udid;
+    NSMutableDictionary *userData;
+}
 
+@property (nonatomic, retain)   NSString *udid;
+@property (nonatomic, retain)   NSString *userName;
+@property (nonatomic, retain)   NSMutableDictionary *userData;
+
+
+-(IBAction)buttonHandler:(id)sender;
 @end
