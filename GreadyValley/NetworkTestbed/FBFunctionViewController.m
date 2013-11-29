@@ -27,8 +27,7 @@
         permissions = [[NSArray alloc] initWithObjects:
                        @"publish_stream",
                        @"publish_actions",
-                       @"user_games_activity",
-                       @"friends_games_activity", nil];
+                       nil];
 
     }
     return self;
@@ -49,6 +48,7 @@
 #pragma mark ------------------ CLASS METHOD ------------------------
 void FB_RequestWritePermissions()
 {
+    
     static bool bHaveRequestedPublishPermissions = false;
     
     if (!bHaveRequestedPublishPermissions)
@@ -61,14 +61,18 @@ void FB_RequestWritePermissions()
          @"friends_games_activity", nil];
          */
         NSArray *permissions = [[NSArray alloc] initWithObjects:@"publish_actions", nil];
-        
-        
+        /*
+        [[FBSession activeSession] requestNewPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone completionHandler:^(FBSession *session, NSError *err){
+            NSLog(@"NSError=%@", [err localizedDescription]);
+        }];
+        */
+/*
         [[FBSession activeSession] reauthorizeWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceFriends completionHandler:^(FBSession *session, NSError* error) {
             
             //            NSLog(@"Reauthorized with publish permissions.");
             
         }];
-        
+*/
         bHaveRequestedPublishPermissions = true;
     }
 }
@@ -134,24 +138,25 @@ void FB_RequestWritePermissions()
     
     
     
-    if ( userData == nil ) {
+//    if ( userData == nil ) {
         [FBRequestConnection
          startForMeWithCompletionHandler:^(FBRequestConnection *connection,
                                            id<FBGraphUser> user,
                                            NSError *error) {
              // Code block here.
              self.userData = [NSMutableDictionary dictionaryWithDictionary:(NSDictionary*)user];
+             
              self.udid = [self.userData objectForKey:@"id"];
              self.userName = [self.userData objectForKey:@"username"];
              [def setObject:self.userData forKey:@"FBUserInfo"];
              [def setObject:self.userName forKey:@"FBName"];
              [def synchronize];
-             [self showMessage:@"Facebook FetchUserData" :self.userName];
+             [self showMessage:@"Facebook FetchUserData" : [user first_name] ];
              //             NSLog(@"Cache Facebook UserInfomation.");
          }];
         return ;
-    }
-    
+//    }
+    NSLog(@"self.userData=%@", self.userData);
     self.udid = [self.userData objectForKey:@"id"];
     self.userName = [self.userData objectForKey:@"username"];
 }

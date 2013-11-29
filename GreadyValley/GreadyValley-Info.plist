@@ -39,6 +39,15 @@
 	<key>FacebookAppID</key>
 	<string>690081074344014</string>
 	<key>FacebookDisplayName</key>
-	<string>greedy-valley-dev</string>
+	<string>GREEDY-VALLEY-DEV</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb690081074344014</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
