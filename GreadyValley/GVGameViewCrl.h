@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GVGameProfile.h"
+#import "GVEventViewCrl.h"
 @interface GVGameViewCrl : UIViewController <UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong) NSArray *dataarray;
+@property (nonatomic,strong) NSMutableArray *dataarray;
 @property (nonatomic,weak) IBOutlet UITableView *tableview;
 @end

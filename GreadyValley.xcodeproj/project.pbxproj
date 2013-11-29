@@ -39,6 +39,14 @@
 		1D84E62818489EB20005BCB8 /* GVEventViewCrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E62618489EB20005BCB8 /* GVEventViewCrl.m */; };
 		1D84E62918489EB20005BCB8 /* GVEventViewCrl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E62718489EB20005BCB8 /* GVEventViewCrl.xib */; };
 		1D84E62B1848CA810005BCB8 /* cellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E62A1848CA810005BCB8 /* cellView.xib */; };
+		1D84E631184904480005BCB8 /* bg-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E62D184904480005BCB8 /* bg-bg@2x.png */; };
+		1D84E632184904480005BCB8 /* bg-btn-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E62E184904480005BCB8 /* bg-btn-login@2x.png */; };
+		1D84E633184904480005BCB8 /* bg-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E62F184904480005BCB8 /* bg-logo@2x.png */; };
+		1D84E634184904480005BCB8 /* bg-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E630184904480005BCB8 /* bg-mask@2x.png */; };
+		1D84E638184911FD0005BCB8 /* GVServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E637184911FD0005BCB8 /* GVServerAPI.m */; };
+		1D84E63A18493B7F0005BCB8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D84E63918493B7F0005BCB8 /* AVFoundation.framework */; };
+		1D84E63C18493B890005BCB8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D84E63B18493B890005BCB8 /* AudioToolbox.framework */; };
+		1D84E63E18493BC80005BCB8 /* loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E63D18493BC80005BCB8 /* loop.mp3 */; };
 		68FBE6021848A38900749228 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 68FBE5771848A38800749228 /* .gitignore */; };
 		68FBE6031848A38900749228 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 68FBE5781848A38800749228 /* .travis.yml */; };
 		68FBE6041848A38900749228 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE57B1848A38800749228 /* AFHTTPRequestOperation.m */; };
@@ -59,8 +67,6 @@
 		68FBE6481848A38900749228 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5FA1848A38900749228 /* UIProgressView+AFNetworking.m */; };
 		68FBE6491848A38900749228 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5FC1848A38900749228 /* UIWebView+AFNetworking.m */; };
 		68FBE64B1848A38900749228 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE6001848A38900749228 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		68FBE6601848A9F300749228 /* FBFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE65E1848A9F300749228 /* FBFunctionViewController.m */; };
-		68FBE6611848A9F300749228 /* FBFunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */; };
 		68FBE6641848AF8200749228 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FBE6631848AF8200749228 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +123,15 @@
 		1D84E62618489EB20005BCB8 /* GVEventViewCrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVEventViewCrl.m; sourceTree = "<group>"; };
 		1D84E62718489EB20005BCB8 /* GVEventViewCrl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GVEventViewCrl.xib; sourceTree = "<group>"; };
 		1D84E62A1848CA810005BCB8 /* cellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cellView.xib; sourceTree = "<group>"; };
+		1D84E62D184904480005BCB8 /* bg-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-bg@2x.png"; sourceTree = "<group>"; };
+		1D84E62E184904480005BCB8 /* bg-btn-login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-btn-login@2x.png"; sourceTree = "<group>"; };
+		1D84E62F184904480005BCB8 /* bg-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-logo@2x.png"; sourceTree = "<group>"; };
+		1D84E630184904480005BCB8 /* bg-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-mask@2x.png"; sourceTree = "<group>"; };
+		1D84E636184911FD0005BCB8 /* GVServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVServerAPI.h; path = Server/GVServerAPI.h; sourceTree = "<group>"; };
+		1D84E637184911FD0005BCB8 /* GVServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVServerAPI.m; path = Server/GVServerAPI.m; sourceTree = "<group>"; };
+		1D84E63918493B7F0005BCB8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1D84E63B18493B890005BCB8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1D84E63D18493BC80005BCB8 /* loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loop.mp3; sourceTree = "<group>"; };
 		68FBE5771848A38800749228 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		68FBE5781848A38800749228 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		68FBE57A1848A38800749228 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -156,9 +171,6 @@
 		68FBE5FC1848A38900749228 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		68FBE5FF1848A38900749228 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		68FBE6001848A38900749228 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		68FBE65D1848A9F300749228 /* FBFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFunctionViewController.h; sourceTree = "<group>"; };
-		68FBE65E1848A9F300749228 /* FBFunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFunctionViewController.m; sourceTree = "<group>"; };
-		68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBFunctionViewController.xib; sourceTree = "<group>"; };
 		68FBE6631848AF8200749228 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +179,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D84E63C18493B890005BCB8 /* AudioToolbox.framework in Frameworks */,
+				1D84E63A18493B7F0005BCB8 /* AVFoundation.framework in Frameworks */,
 				1D5BC8FA18485C9400983B90 /* CoreGraphics.framework in Frameworks */,
 				68FBE6641848AF8200749228 /* FacebookSDK.framework in Frameworks */,
 				1D5BC8FC18485C9400983B90 /* UIKit.framework in Frameworks */,
@@ -222,6 +236,7 @@
 		1D5BC8FD18485C9400983B90 /* GreadyValley */ = {
 			isa = PBXGroup;
 			children = (
+				1D84E635184911D30005BCB8 /* Server */,
 				68FBE65C1848A9D200749228 /* NetworkTestbed */,
 				1D5BC9371848670A00983B90 /* LoginView.xib */,
 				1D5BC90618485C9400983B90 /* GVAppDelegate.h */,
@@ -252,6 +267,7 @@
 		1D5BC8FE18485C9400983B90 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D84E63D18493BC80005BCB8 /* loop.mp3 */,
 				1D5BC92C18485F6200983B90 /* images */,
 				1D5BC8FF18485C9400983B90 /* GreadyValley-Info.plist */,
 				1D5BC90018485C9400983B90 /* InfoPlist.strings */,
@@ -282,6 +298,10 @@
 		1D5BC92C18485F6200983B90 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1D84E62D184904480005BCB8 /* bg-bg@2x.png */,
+				1D84E62E184904480005BCB8 /* bg-btn-login@2x.png */,
+				1D84E62F184904480005BCB8 /* bg-logo@2x.png */,
+				1D84E630184904480005BCB8 /* bg-mask@2x.png */,
 				1D84E615184883B00005BCB8 /* profile.jpg */,
 				1D84E60A18487BA80005BCB8 /* facebook_login.png */,
 				1D84E607184878FA0005BCB8 /* Logo.jpeg */,
@@ -292,6 +312,15 @@
 				1D5BC93118485F6200983B90 /* 4.jpg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		1D84E635184911D30005BCB8 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E636184911FD0005BCB8 /* GVServerAPI.h */,
+				1D84E637184911FD0005BCB8 /* GVServerAPI.m */,
+			);
+			name = Server;
 			sourceTree = "<group>";
 		};
 		68FBE5751848A38800749228 /* Libs */ = {
@@ -375,9 +404,6 @@
 		68FBE65C1848A9D200749228 /* NetworkTestbed */ = {
 			isa = PBXGroup;
 			children = (
-				68FBE65D1848A9F300749228 /* FBFunctionViewController.h */,
-				68FBE65E1848A9F300749228 /* FBFunctionViewController.m */,
-				68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */,
 			);
 			path = NetworkTestbed;
 			sourceTree = "<group>";
@@ -385,6 +411,8 @@
 		68FBE6621848AF8200749228 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D84E63B18493B890005BCB8 /* AudioToolbox.framework */,
+				1D84E63918493B7F0005BCB8 /* AVFoundation.framework */,
 				68FBE6631848AF8200749228 /* FacebookSDK.framework */,
 			);
 			path = Frameworks;
@@ -475,17 +503,21 @@
 				1D84E60B18487BA80005BCB8 /* facebook_login.png in Resources */,
 				1D84E608184878FA0005BCB8 /* Logo.jpeg in Resources */,
 				1D5BC9381848670A00983B90 /* LoginView.xib in Resources */,
+				1D84E63E18493BC80005BCB8 /* loop.mp3 in Resources */,
 				1D5BC93218485F6200983B90 /* 0.jpg in Resources */,
-				68FBE6611848A9F300749228 /* FBFunctionViewController.xib in Resources */,
 				1D84E61B184884780005BCB8 /* GVGameViewCrl.xib in Resources */,
 				1D84E62918489EB20005BCB8 /* GVEventViewCrl.xib in Resources */,
 				1D5BC91018485C9400983B90 /* Images.xcassets in Resources */,
 				1D5BC90218485C9400983B90 /* InfoPlist.strings in Resources */,
 				1D5BC90B18485C9400983B90 /* Main.storyboard in Resources */,
 				1D5BC93518485F6200983B90 /* 3.jpg in Resources */,
+				1D84E631184904480005BCB8 /* bg-bg@2x.png in Resources */,
 				1D84E62B1848CA810005BCB8 /* cellView.xib in Resources */,
 				1D84E61318487F830005BCB8 /* GVStartViewCrl.xib in Resources */,
 				1D5BC93318485F6200983B90 /* 1.jpg in Resources */,
+				1D84E632184904480005BCB8 /* bg-btn-login@2x.png in Resources */,
+				1D84E634184904480005BCB8 /* bg-mask@2x.png in Resources */,
+				1D84E633184904480005BCB8 /* bg-logo@2x.png in Resources */,
 				68FBE60D1848A38900749228 /* AFNetworking.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,7 +559,7 @@
 				1D84E62818489EB20005BCB8 /* GVEventViewCrl.m in Sources */,
 				68FBE60A1848A38900749228 /* AFURLRequestSerialization.m in Sources */,
 				68FBE6071848A38900749228 /* AFNetworkReachabilityManager.m in Sources */,
-				68FBE6601848A9F300749228 /* FBFunctionViewController.m in Sources */,
+				1D84E638184911FD0005BCB8 /* GVServerAPI.m in Sources */,
 				68FBE60B1848A38900749228 /* AFURLResponseSerialization.m in Sources */,
 				68FBE6431848A38900749228 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				1D5BC90818485C9400983B90 /* GVAppDelegate.m in Sources */,
@@ -657,7 +689,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					./Frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GreadyValley/GreadyValley-Prefix.pch";
 				INFOPLIST_FILE = "GreadyValley/GreadyValley-Info.plist";
@@ -671,7 +706,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					./Frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GreadyValley/GreadyValley-Prefix.pch";
 				INFOPLIST_FILE = "GreadyValley/GreadyValley-Info.plist";

@@ -8,7 +8,7 @@
 
 #import "GVStartViewCrl.h"
 #import "GVGameViewCrl.h"
-@interface GVStartViewCrl ()
+@interface GVStartViewCrl ()<UITextFieldDelegate>
 
 @end
 
@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.startButton.hidden = YES;
+    self.custmizeButton.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,4 +47,19 @@
 
 }
 
+-(void) textFieldDidEndEditing:(UITextField *)textField {
+    if (![textField.text isEqualToString: @""]) {
+        self.startButton.hidden = NO;
+        self.custmizeButton.hidden = NO;
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (![textField.text isEqualToString: @""]) {
+        self.startButton.hidden = NO;
+        self.custmizeButton.hidden = NO;
+    }
+    [textField resignFirstResponder];
+    return NO;
+}
 @end

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface GVEventViewCrl : UIViewController
-
+@property(nonatomic,strong) UIImage *eventImage;
+@property(nonatomic,strong) NSString *descString;
+@property(nonatomic,weak)IBOutlet UIImageView *photo;
+@property(nonatomic,weak)IBOutlet UITextView *desc;
+-(IBAction)closeMySelf:(id)sender;
 @end

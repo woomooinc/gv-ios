@@ -7,7 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GVStartViewCrl">
             <connections>
                 <outlet property="companyText" destination="8Jf-Hv-HOF" id="khP-NT-iS4"/>
+                <outlet property="custmizeButton" destination="Bnk-xI-Q53" id="n3l-jc-fzk"/>
                 <outlet property="profileImageView" destination="DDH-Z2-ohd" id="DLU-g1-G3G"/>
+                <outlet property="startButton" destination="c6v-2a-T0S" id="fnY-rJ-5Tv"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -16,18 +18,25 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDH-Z2-ohd">
-                    <rect key="frame" x="48" y="51" width="224" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yvg-Lz-8Sl">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="DDH-Z2-ohd">
+                    <rect key="frame" x="48" y="51" width="224" height="180"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Jf-Hv-HOF">
-                    <rect key="frame" x="48" y="204" width="224" height="30"/>
+                    <rect key="frame" x="48" y="260" width="224" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="aWT-Lw-Rft"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6v-2a-T0S">
-                    <rect key="frame" x="43" y="331" width="224" height="30"/>
+                    <rect key="frame" x="43" y="413" width="224" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Start">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +46,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnk-xI-Q53">
-                    <rect key="frame" x="123" y="369" width="64" height="30"/>
+                    <rect key="frame" x="123" y="471" width="64" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Custmize">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,4 +61,8 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="bg-bg.png" width="320" height="568"/>
+        <image name="bg-logo.png" width="290" height="150"/>
+    </resources>
 </document>

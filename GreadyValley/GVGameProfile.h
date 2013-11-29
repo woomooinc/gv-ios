@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GVGameProfile : UIView
-- (void) bulidViewWithPlays:(int) plays;
+@property(nonatomic,assign) CGFloat startX;
+@property(nonatomic,assign) CGFloat startY;
+- (void) bulidViewWithPlays:(int) plays isShowBuzz:(BOOL) isShow;
 @end

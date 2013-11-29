@@ -11,6 +11,8 @@
 @interface GVStartViewCrl : UIViewController
 @property(nonatomic,weak) IBOutlet UITextField *companyText;
 @property(nonatomic,weak) IBOutlet UIImageView *profileImageView;
+@property(nonatomic,weak) IBOutlet UIButton *startButton;
+@property(nonatomic,weak) IBOutlet UIButton *custmizeButton;
 -(IBAction) onStart:(id)sender;
 -(IBAction) onCumstmize:(id)sender;
 @end
