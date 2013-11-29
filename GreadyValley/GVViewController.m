@@ -8,6 +8,7 @@
 
 #import "GVViewController.h"
 #import "GVStartViewCrl.h"
+#import "FBFunctionViewController.h"
 @interface GVViewController ()
 @property (nonatomic,strong) UIImageView *logoImageView;
 @property (nonatomic,strong) UIButton *loginbutton;
@@ -54,7 +55,17 @@
     self.IntroScrollView.contentSize = CGSizeMake(0,3408);
     self.IntroScrollView.delegate = self;
     
-    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    [btn setTitle:@"FB Test" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1];
+    [btn addTarget:self action:@selector(showFBTestUnit) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+-(void) showFBTestUnit
+{
+    FBFunctionViewController *fbVC = [[FBFunctionViewController alloc] init];
+    [self presentViewController:fbVC animated:YES completion:nil];
 }
 
 -(void) login:(id)sender{
