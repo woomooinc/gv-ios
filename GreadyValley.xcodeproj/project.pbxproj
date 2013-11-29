@@ -50,7 +50,6 @@
 		68FBE60B1848A38900749228 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE58A1848A38800749228 /* AFURLResponseSerialization.m */; };
 		68FBE60C1848A38900749228 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE58C1848A38800749228 /* AFURLSessionManager.m */; };
 		68FBE60D1848A38900749228 /* AFNetworking.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 68FBE58D1848A38800749228 /* AFNetworking.podspec */; };
-		68FBE60E1848A38900749228 /* AFNetworking.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 68FBE58E1848A38800749228 /* AFNetworking.xcworkspace */; };
 		68FBE6431848A38900749228 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5EF1848A38900749228 /* AFNetworkActivityIndicatorManager.m */; };
 		68FBE6441848A38900749228 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5F11848A38900749228 /* UIActivityIndicatorView+AFNetworking.m */; };
 		68FBE6451848A38900749228 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5F31848A38900749228 /* UIAlertView+AFNetworking.m */; };
@@ -138,7 +137,6 @@
 		68FBE58B1848A38800749228 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		68FBE58C1848A38800749228 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		68FBE58D1848A38800749228 /* AFNetworking.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFNetworking.podspec; sourceTree = "<group>"; };
-		68FBE58E1848A38800749228 /* AFNetworking.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = AFNetworking.xcworkspace; sourceTree = "<group>"; };
 		68FBE5EE1848A38900749228 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 		68FBE5EF1848A38900749228 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
 		68FBE5F01848A38900749228 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
@@ -309,7 +307,6 @@
 				68FBE5781848A38800749228 /* .travis.yml */,
 				68FBE5791848A38800749228 /* AFNetworking */,
 				68FBE58D1848A38800749228 /* AFNetworking.podspec */,
-				68FBE58E1848A38800749228 /* AFNetworking.xcworkspace */,
 				68FBE5ED1848A38900749228 /* UIKit+AFNetworking */,
 			);
 			path = "AFNetworking-master";
@@ -473,7 +470,6 @@
 				68FBE6031848A38900749228 /* .travis.yml in Resources */,
 				1D5BC93418485F6200983B90 /* 2.jpg in Resources */,
 				1D84E60B18487BA80005BCB8 /* facebook_login.png in Resources */,
-				68FBE60E1848A38900749228 /* AFNetworking.xcworkspace in Resources */,
 				1D84E608184878FA0005BCB8 /* Logo.jpeg in Resources */,
 				1D5BC9381848670A00983B90 /* LoginView.xib in Resources */,
 				1D5BC93218485F6200983B90 /* 0.jpg in Resources */,
