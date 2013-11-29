@@ -58,7 +58,6 @@
 		68FBE6481848A38900749228 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5FA1848A38900749228 /* UIProgressView+AFNetworking.m */; };
 		68FBE6491848A38900749228 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5FC1848A38900749228 /* UIWebView+AFNetworking.m */; };
 		68FBE64B1848A38900749228 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE6001848A38900749228 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		68FBE65B1848A92B00749228 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FBE65A1848A92B00749228 /* FacebookSDK.framework */; };
 		68FBE6601848A9F300749228 /* FBFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE65E1848A9F300749228 /* FBFunctionViewController.m */; };
 		68FBE6611848A9F300749228 /* FBFunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */; };
 /* End PBXBuildFile section */
@@ -154,7 +153,6 @@
 		68FBE5FC1848A38900749228 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		68FBE5FF1848A38900749228 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		68FBE6001848A38900749228 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		68FBE65A1848A92B00749228 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		68FBE65D1848A9F300749228 /* FBFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFunctionViewController.h; sourceTree = "<group>"; };
 		68FBE65E1848A9F300749228 /* FBFunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFunctionViewController.m; sourceTree = "<group>"; };
 		68FBE65F1848A9F300749228 /* FBFunctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBFunctionViewController.xib; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D5BC8FA18485C9400983B90 /* CoreGraphics.framework in Frameworks */,
-				68FBE65B1848A92B00749228 /* FacebookSDK.framework in Frameworks */,
 				1D5BC8FC18485C9400983B90 /* UIKit.framework in Frameworks */,
 				1D5BC8F818485C9400983B90 /* Foundation.framework in Frameworks */,
 			);
@@ -188,7 +185,6 @@
 		1D5BC8EB18485C9400983B90 = {
 			isa = PBXGroup;
 			children = (
-				68FBE6591848A92B00749228 /* Frameworks */,
 				68FBE5751848A38800749228 /* Libs */,
 				1D5BC8FD18485C9400983B90 /* GreadyValley */,
 				1D5BC91C18485C9500983B90 /* GreadyValleyTests */,
@@ -367,14 +363,6 @@
 				68FBE6001848A38900749228 /* JSONKit.m */,
 			);
 			path = "JSONKit-master";
-			sourceTree = "<group>";
-		};
-		68FBE6591848A92B00749228 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				68FBE65A1848A92B00749228 /* FacebookSDK.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		68FBE65C1848A9D200749228 /* NetworkTestbed */ = {
