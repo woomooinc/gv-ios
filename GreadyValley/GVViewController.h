@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GVViewController : UIViewController
-
+@interface GVViewController : UIViewController <UIScrollViewDelegate>
+@property (nonatomic, strong) IBOutlet UIScrollView *IntroScrollView;
 @end
