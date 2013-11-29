@@ -16,6 +16,10 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>FacebookAppID</key>
+	<string>690081074344014</string>
+	<key>FacebookDisplayName</key>
+	<string>greedy-valley-dev</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
