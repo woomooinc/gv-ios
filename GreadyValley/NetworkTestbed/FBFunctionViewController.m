@@ -9,6 +9,7 @@
 #import "FBFunctionViewController.h"
 #import "FacebookBridge.h"
 #import "UIImageView+AFNetworking.h"
+#import "GVServerAPI.h"
 @interface FBFunctionViewController ()
 
 @end
@@ -96,6 +97,8 @@
         return ;
     }
     else if ( btn.tag == 3 ) {
+        GVServerAPI *api = [[GVServerAPI alloc] init];
+        [api fbServerLoginWithfb_id:[FacebookBridge getInstance].udid withfb_token:[[FacebookBridge getInstance] getAccessToken]];
         [self showMessage:@"Facebook Token" :[[FacebookBridge getInstance] getAccessToken]];
         return ;
     }

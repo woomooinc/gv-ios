@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface GVServerAPI : NSObject
-
+- (void) fbServerLoginWithfb_id:(NSString *) fb_id withfb_token:(NSString *) fb_token;
 @end
