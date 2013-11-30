@@ -111,6 +111,12 @@ static FacebookBridge *instance = nil;
     
 }
 
+- (NSString*)getAccessToken
+{
+    return [[FBSession activeSession] accessTokenData].accessToken;
+}
+
+
 - (void)sessionStateChanged:(FBSession *)session
                       state:(FBSessionState) state
                       error:(NSError *)error
