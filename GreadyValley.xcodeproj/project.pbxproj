@@ -68,6 +68,7 @@
 		68FBE6491848A38900749228 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE5FC1848A38900749228 /* UIWebView+AFNetworking.m */; };
 		68FBE64B1848A38900749228 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE6001848A38900749228 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68FBE6641848AF8200749228 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FBE6631848AF8200749228 /* FacebookSDK.framework */; };
+		68FBE668184953A300749228 /* FacebookBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FBE667184953A300749228 /* FacebookBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,8 @@
 		68FBE5FF1848A38900749228 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		68FBE6001848A38900749228 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		68FBE6631848AF8200749228 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		68FBE666184953A300749228 /* FacebookBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookBridge.h; sourceTree = "<group>"; };
+		68FBE667184953A300749228 /* FacebookBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookBridge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,7 @@
 		1D5BC8EB18485C9400983B90 = {
 			isa = PBXGroup;
 			children = (
+				68FBE6651849538900749228 /* Components */,
 				68FBE6621848AF8200749228 /* Frameworks */,
 				68FBE5751848A38800749228 /* Libs */,
 				1D5BC8FD18485C9400983B90 /* GreadyValley */,
@@ -418,6 +422,15 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		68FBE6651849538900749228 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				68FBE666184953A300749228 /* FacebookBridge.h */,
+				68FBE667184953A300749228 /* FacebookBridge.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -537,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68FBE668184953A300749228 /* FacebookBridge.m in Sources */,
 				68FBE60C1848A38900749228 /* AFURLSessionManager.m in Sources */,
 				68FBE6091848A38900749228 /* AFURLConnectionOperation.m in Sources */,
 				68FBE6041848A38900749228 /* AFHTTPRequestOperation.m in Sources */,
