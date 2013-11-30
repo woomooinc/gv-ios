@@ -72,10 +72,10 @@ static FacebookBridge *instance = nil;
              [def setObject:self.userData forKey:@"FBUserInfo"];
              [def setObject:self.userName forKey:@"FBName"];
              [def synchronize];
-             //             NSLog(@"Cache Facebook UserInfomation.");
+             NSLog(@"FBID:%@", self.udid);
              
              //[self showMessage:@"Fetch Userdata" :[NSString stringWithFormat:@"ID=%@ Username=%@",self.udid, self.userName] ];
-             
+             //517348050
              if ( blockCode != nil )
                  blockCode();
              
@@ -231,6 +231,11 @@ static FacebookBridge *instance = nil;
 
 - (void)setProfilePicture:(UIImageView*)imgView FBID:(NSString*)fbid imageSize:(CGSize)size
 {
+    [self setProfilePicture:imgView FBID:fbid imageSize:size withBlock:nil];
+}
+
+- (void)setProfilePicture:(UIImageView*)imgView FBID:(NSString*)fbid imageSize:(CGSize)size withBlock:(void(^)())block
+{
     NSString *photoSize = nil;
     if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
         ([UIScreen mainScreen].scale == 2.0)) {
@@ -243,7 +248,17 @@ static FacebookBridge *instance = nil;
     [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture%@",
      fbid,photoSize];
     
-    [imgView setImageWithURL:[NSURL URLWithString:urlString]];
+    //[imgView setImageWithURL:[NSURL URLWithString:urlString]];
+    __weak UIImageView *weakImgView = imgView;
+    [imgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]] placeholderImage:nil success:
+     ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+         weakImgView.image = image;
+         if ( block != nil )
+             block();
+         
+     }
+                            failure:nil];
+
 }
 
 

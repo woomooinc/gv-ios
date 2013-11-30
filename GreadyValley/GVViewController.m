@@ -8,6 +8,7 @@
 
 #import "GVViewController.h"
 #import "GVStartViewCrl.h"
+#import "FacebookBridge.h"
 #import "FBFunctionViewController.h"
 
 @interface GVViewController ()
@@ -62,6 +63,19 @@
     [btn addTarget:self action:@selector(showFBTestUnit) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 }
+-(void) login:(id)sender
+{
+    if ( ![[FacebookBridge getInstance] checkState] )
+        [[FacebookBridge getInstance] login:^(){
+            GVStartViewCrl *startViewCrl = [[GVStartViewCrl alloc] initWithNibName:@"GVStartViewCrl" bundle:nil];
+            [self presentViewController:startViewCrl animated:NO completion:nil];
+
+        }];
+    else {
+        GVStartViewCrl *startViewCrl = [[GVStartViewCrl alloc] initWithNibName:@"GVStartViewCrl" bundle:nil];
+        [self presentViewController:startViewCrl animated:NO completion:nil];
+    }
+}
 
 -(void) showFBTestUnit
 {
@@ -69,151 +83,10 @@
     [self presentViewController:fbVC animated:YES completion:nil];
 }
 
--(void) login:(id)sender{
-    
-//    FBFunctionViewController *fbVC = [[FBFunctionViewController alloc] init];
-//    [self presentViewController:fbVC animated:YES completion:nil];
-    
-    // See if the app has a valid token for the current state.
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        // To-do, show logged in view
-        [self fetchUserdata];
-    } else {
-        // No, display the login page.
-        [self FBLogin];
-    }
-
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark ------------------ CLASS METHOD ------------------------
-void FB_RequestWritePermissions()
-{
-    
-    static bool bHaveRequestedPublishPermissions = false;
-    
-    if (!bHaveRequestedPublishPermissions)
-    {
-        /*
-         NSArray *permissions = [[NSArray alloc] initWithObjects:
-         @"publish_stream",
-         @"publish_actions",
-         @"user_games_activity",
-         @"friends_games_activity", nil];
-         */
-        NSArray *permissions = [[NSArray alloc] initWithObjects:@"publish_actions", nil];
-        /*
-         [[FBSession activeSession] requestNewPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone completionHandler:^(FBSession *session, NSError *err){
-         NSLog(@"NSError=%@", [err localizedDescription]);
-         }];
-         */
-        /*
-         [[FBSession activeSession] reauthorizeWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceFriends completionHandler:^(FBSession *session, NSError* error) {
-         
-         //            NSLog(@"Reauthorized with publish permissions.");
-         
-         }];
-         */
-        bHaveRequestedPublishPermissions = true;
-    }
-}
-
-- (void)FBLogin
-{
-    
-    [FBSession openActiveSessionWithReadPermissions:nil
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session,
-                                                      FBSessionState state,
-                                                      NSError *error) {
-                                      if ( !error ) {
-                                          FB_RequestWritePermissions();
-                                      }
-                                      [self sessionStateChanged:session state:state error:error];
-                                  }];
-    
-}
-
-- (void)sessionStateChanged:(FBSession *)session
-                      state:(FBSessionState) state
-                      error:(NSError *)error
-{
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    
-    switch (state) {
-        case FBSessionStateOpen: {
-            // Handle the logged in scenario
-            
-            // You may wish to show a logged in view
-            NSLog(@"FBSessionStateOpen.");
-            [self fetchUserdata];
-            break;
-        }
-        case FBSessionStateClosed: {
-            NSLog(@"FBSessionStateClosed.");
-        }
-            
-        case FBSessionStateClosedLoginFailed: {
-            //NSLog(@"FBSessionStateClosedLoginFailed.");
-            // Handle the logged out scenario
-            // Close the active session
-            [FBSession.activeSession closeAndClearTokenInformation];
-            
-            [def synchronize];
-            // You may wish to show a logged out view
-            break;
-        }
-        default:
-            break;
-    }
-    
-    if (error) {
-        // Handle authentication errors
-    }
-}
-
-- (void)fetchUserdata
-{
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    self.userData = [def objectForKey:@"FBUserInfo"];
-    
-    
-    
-    //    if ( userData == nil ) {
-    [FBRequestConnection
-     startForMeWithCompletionHandler:^(FBRequestConnection *connection,
-                                       id<FBGraphUser> user,
-                                       NSError *error) {
-         // Code block here.
-         self.userData = [NSMutableDictionary dictionaryWithDictionary:(NSDictionary*)user];
-         
-         self.udid = [self.userData objectForKey:@"id"];
-         self.userName = [self.userData objectForKey:@"username"];
-         [def setObject:self.userData forKey:@"FBUserInfo"];
-         [def setObject:self.userName forKey:@"FBName"];
-         [def synchronize];
-         [self showMessage:@"Facebook FetchUserData" : [user first_name] ];
-                     NSLog(@"Cache Facebook UserInfomation.");
-     }];
-    return ;
-    //    }
-    NSLog(@"self.userData=%@", self.userData);
-    self.udid = [self.userData objectForKey:@"id"];
-    self.userName = [self.userData objectForKey:@"username"];
-}
-
-
-- (void)showMessage:(NSString*)title :(NSString*)content
-{
-//    [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-    GVStartViewCrl *startViewCrl = [[GVStartViewCrl alloc] initWithNibName:@"GVStartViewCrl" bundle:nil];
-    [self presentViewController:startViewCrl animated:NO completion:nil];
-
 }
 
 #pragma mark ------------------ CLASS EVENT --------------------------

@@ -39,5 +39,6 @@
 - (NSString*)getAccessToken;
 
 - (void)setProfilePicture:(UIImageView*)imgView FBID:(NSString*)fbid imageSize:(CGSize)size;
+- (void)setProfilePicture:(UIImageView*)imgView FBID:(NSString*)fbid imageSize:(CGSize)size withBlock:(void(^)())block;
 
 @end

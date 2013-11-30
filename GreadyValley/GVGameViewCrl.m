@@ -7,7 +7,7 @@
 //
 
 #import "GVGameViewCrl.h"
-
+#import "FacebookBridge.h"
 @interface GVGameViewCrl ()
 
 @end
@@ -21,16 +21,20 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        NSDictionary *dictionary = @{@"_id":@"4fe9fa8d2aef4710b9000001",
+        NSString *myfbid = [FacebookBridge getInstance].udid;
+        NSDictionary *dictionary = @{@"_id":@"517348050",
                                      @"player_id":@"4fe9fa8d2aef4710b9000001",
                                      @"desc":@"Happiness is having a large, loving, caring, close-knit family in another city.\n\n\t\t-George Burns (1896 - 1996)",
                                      @"point":@"-10",
-                                     @"url":@"//greedyvalley.com/img/20120312/4e836c8ab7293cce08000002_o.jpg"};
-        NSDictionary *dictionary2 = @{@"_id":@"4fe9fa8d2aef4710b9000001",
+                                     @"url":@"//greedyvalley.com/img/20120312/4e836c8ab7293cce08000002_o.jpg"
+                                     };
+        NSDictionary *dictionary2 = @{@"_id":@"517348050",
                                      @"player_id":@"4fe9fa8d2aef4710b9000001",
                                      @"desc":@"what ever this event is\nwhat ever this event is\nwhat ever this event is",
                                      @"point":@"-10",
-                                     @"url":@"//greedyvalley.com/img/20120312/4e836c8ab7293cce08000002_o.jpg"};
+                                     @"url":@"//greedyvalley.com/img/20120312/4e836c8ab7293cce08000002_o.jpg"
+
+                                      };
         
         NSArray *temp_dataarray = @[dictionary,dictionary2,dictionary,dictionary2,dictionary];
         self.dataarray = [NSMutableArray arrayWithArray:temp_dataarray];
@@ -165,7 +169,9 @@
     GVGameProfile *gameProfile = [[GVGameProfile alloc] initWithFrame:CGRectMake(CELL_CONTENT_MARGIN, CELL_CONTENT_MARGIN, 80, 80)];
     gameProfile.startX = 10;
     gameProfile.startY = 0;
-    [gameProfile bulidViewWithPlays:1 isShowBuzz:NO];
+//    [gameProfile bulidViewWithPlays:1 isShowBuzz:NO];
+    [gameProfile displayAvatar:[[self.dataarray objectAtIndex:indexPath.row] objectForKey:@"_id"] ];
+    
     [cell.contentView addSubview:gameProfile];
     return cell;
 }

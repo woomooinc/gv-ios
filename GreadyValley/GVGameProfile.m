@@ -7,7 +7,7 @@
 //
 
 #import "GVGameProfile.h"
-
+#import "FacebookBridge.h"
 @implementation GVGameProfile
 
 - (id)initWithFrame:(CGRect)frame
@@ -21,7 +21,8 @@
 
 
 
-- (void) bulidViewWithPlays:(int) plays isShowBuzz:(BOOL) isShow{
+- (void) bulidViewWithPlays:(int) plays isShowBuzz:(BOOL) isShow
+{
     for (int i = 1; plays >= i ; i++) {
         UIImageView *mainProfile = [[UIImageView alloc] initWithFrame:CGRectMake(self.startX + (i -1)  * 55, self.startY, 50, 50)];
         mainProfile.image = [self ellipseImage:[UIImage imageNamed:@"profile.jpg"] withInset:3 withBorderWidth:2 withBorderColor:[UIColor whiteColor]];
@@ -37,6 +38,18 @@
         
     }
 }
+
+- (void) displayAvatar:(NSString*)fbid
+{
+    UIImageView *mainProfile = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [[FacebookBridge getInstance] setProfilePicture:mainProfile FBID:fbid imageSize:CGSizeMake(50, 50) withBlock:^(){
+        mainProfile.image = [self ellipseImage:mainProfile.image withInset:3 withBorderWidth:2
+                               withBorderColor:[UIColor whiteColor]];
+    }];
+    
+    [self addSubview:mainProfile];
+}
+
 
 
 - (UIImage *) ellipseImage: (UIImage *) image withInset: (CGFloat) inset withBorderWidth:(CGFloat)width withBorderColor:(UIColor*)color

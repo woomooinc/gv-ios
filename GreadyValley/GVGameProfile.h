@@ -12,4 +12,5 @@
 @property(nonatomic,assign) CGFloat startX;
 @property(nonatomic,assign) CGFloat startY;
 - (void) bulidViewWithPlays:(int) plays isShowBuzz:(BOOL) isShow;
+- (void) displayAvatar:(NSString*)fbid;
 @end
