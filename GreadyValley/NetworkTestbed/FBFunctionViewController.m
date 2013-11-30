@@ -8,6 +8,7 @@
 
 #import "FBFunctionViewController.h"
 #import "FacebookBridge.h"
+#import "UIImageView+AFNetworking.h"
 @interface FBFunctionViewController ()
 
 @end
@@ -48,8 +49,25 @@
 - (void)loadUserInfo
 {
     [[FacebookBridge getInstance] fetchUserdata:^() {
+        UIImageView *imgView = (UIImageView*)[self.view viewWithTag:102];
         UILabel *nameLaebl = (UILabel*)[self.view viewWithTag:101];
         nameLaebl.text = [NSString stringWithFormat:@"%@(%@)", [FacebookBridge getInstance].userName, [FacebookBridge getInstance].udid];
+        
+        
+        NSString *photoSize = nil;
+        if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
+            ([UIScreen mainScreen].scale == 2.0)) {
+            photoSize = @"?width=400&height=400";
+        } else {
+            photoSize = @"?width=200&height=200";
+        }
+
+        
+        NSString *urlString =
+        [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture%@",
+         [FacebookBridge getInstance].udid,photoSize];
+
+        [imgView setImageWithURL:[NSURL URLWithString:urlString]];
     }];
     
 }
