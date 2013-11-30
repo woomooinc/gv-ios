@@ -58,6 +58,10 @@
         [[FacebookBridge getInstance] logout];
         return ;
     }
+    else if ( btn.tag == 3 ) {
+        [self showMessage:@"Facebook Token" :[[FacebookBridge getInstance] getAccessToken]];
+        return ;
+    }
     
     // See if the app has a valid token for the current state.
     if ( FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded ) {

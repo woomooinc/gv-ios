@@ -36,6 +36,6 @@
 - (void)uploadPhoto:(NSDictionary*)params;
 - (void)updateScore:(int)score;
 - (void)fetchUserdata;
-
+- (NSString*)getAccessToken;
 
 @end
