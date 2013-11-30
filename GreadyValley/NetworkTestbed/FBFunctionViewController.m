@@ -53,27 +53,16 @@
         UILabel *nameLaebl = (UILabel*)[self.view viewWithTag:101];
         nameLaebl.text = [NSString stringWithFormat:@"%@(%@)", [FacebookBridge getInstance].userName, [FacebookBridge getInstance].udid];
         
+        [[FacebookBridge getInstance] setProfilePicture:imgView FBID:[FacebookBridge getInstance].udid imageSize:CGSizeMake(200, 200)];
         
-        NSString *photoSize = nil;
-        if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
-            ([UIScreen mainScreen].scale == 2.0)) {
-            photoSize = @"?width=400&height=400";
-        } else {
-            photoSize = @"?width=200&height=200";
-        }
-
-        
-        NSString *urlString =
-        [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture%@",
-         [FacebookBridge getInstance].udid,photoSize];
-
-        [imgView setImageWithURL:[NSURL URLWithString:urlString]];
     }];
     
 }
 
 - (void)resetUserInfo
 {
+    UIImageView *imgView = (UIImageView*)[self.view viewWithTag:102];
+    [imgView setImage:nil];
     UILabel *nameLaebl = (UILabel*)[self.view viewWithTag:101];
     nameLaebl.text = @"Username";
 }

@@ -38,4 +38,6 @@
 - (void)fetchUserdata:(void(^)())blockCode;
 - (NSString*)getAccessToken;
 
+- (void)setProfilePicture:(UIImageView*)imgView FBID:(NSString*)fbid imageSize:(CGSize)size;
+
 @end
