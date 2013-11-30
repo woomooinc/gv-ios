@@ -26,10 +26,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [[FacebookBridge getInstance] activeSession];
+    UIButton *btn = (UIButton*)[self.view viewWithTag:1];
     
-    UILabel *nameLaebl = (UILabel*)[self.view viewWithTag:101];
-    nameLaebl.text = [NSString stringWithFormat:@"%@(%@)", [FacebookBridge getInstance].userName, [FacebookBridge getInstance].udid];
+    if ( [[FacebookBridge getInstance] checkState] ) {
+        [btn setTitle:@"Logout" forState:UIControlStateNormal];
+        [self loadUserInfo];
+    }
+    else {
+        [btn setTitle:@"Login" forState:UIControlStateNormal];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +45,20 @@
 }
 
 #pragma mark ------------------ CLASS METHOD ------------------------
+- (void)loadUserInfo
+{
+    [[FacebookBridge getInstance] fetchUserdata:^() {
+        UILabel *nameLaebl = (UILabel*)[self.view viewWithTag:101];
+        nameLaebl.text = [NSString stringWithFormat:@"%@(%@)", [FacebookBridge getInstance].userName, [FacebookBridge getInstance].udid];
+    }];
+    
+}
 
+- (void)resetUserInfo
+{
+    UILabel *nameLaebl = (UILabel*)[self.view viewWithTag:101];
+    nameLaebl.text = @"Username";
+}
 - (void)showMessage:(NSString*)title :(NSString*)content
 {
     [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
@@ -63,14 +82,26 @@
         return ;
     }
     
-    // See if the app has a valid token for the current state.
-    if ( FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded ) {
-        // To-do, show logged in view
-        [[FacebookBridge getInstance] fetchUserdata];
-    } else {
-        // No, display the login page.
-        [[FacebookBridge getInstance] login];
+    if ( btn.tag == 1 && [btn.titleLabel.text isEqualToString:@"Login"] ) {
+        [[FacebookBridge getInstance] login:^(){
+            [self loadUserInfo];
+            [btn setTitle:@"Logout" forState:UIControlStateNormal];
+        }];
     }
+    else {
+        [[FacebookBridge getInstance] logout];
+        [self resetUserInfo];
+        [btn setTitle:@"Login" forState:UIControlStateNormal];
+    }
+    /*
+     // See if the app has a valid token for the current state.
+     if ( FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded ) {
+     // To-do, show logged in view
+     [[FacebookBridge getInstance] fetchUserdata];
+     } else {
+     // No, display the login page.
+     }
+     */
 }
 
 @end

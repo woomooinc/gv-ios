@@ -8,39 +8,12 @@
 
 #import "FacebookBridge.h"
 
-void FB_RequestWritePermissions()
-{
-    static bool bHaveRequestedPublishPermissions = false;
-    
-    if (!bHaveRequestedPublishPermissions)
-    {
-        /*
-         NSArray *permissions = [[NSArray alloc] initWithObjects:
-         @"publish_stream",
-         @"publish_actions",
-         @"user_games_activity",
-         @"friends_games_activity", nil];
-         */
-        NSArray *permissions = [[NSArray alloc] initWithObjects:@"publish_actions", nil];
-        
-        
-        [[FBSession activeSession] reauthorizeWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceFriends completionHandler:^(FBSession *session, NSError* error) {
-            
-            //            NSLog(@"Reauthorized with publish permissions.");
-            
-        }];
-        
-        bHaveRequestedPublishPermissions = true;
-    }
-}
-
-
 static FacebookBridge *instance = nil;
 @implementation FacebookBridge
 @synthesize userName;
 @synthesize udid;
 @synthesize userData;
-
+@synthesize callbackDelegate;
 + (FacebookBridge*)getInstance
 {
     if ( instance == nil ) {
@@ -75,7 +48,7 @@ static FacebookBridge *instance = nil;
 }
 
 
-- (void)fetchUserdata
+- (void)fetchUserdata:(void(^)())blockCode
 {
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     self.userData = [def objectForKey:@"FBUserInfo"];
@@ -101,13 +74,19 @@ static FacebookBridge *instance = nil;
              [def synchronize];
              //             NSLog(@"Cache Facebook UserInfomation.");
              
-             [self showMessage:@"Fetch Userdata" :[NSString stringWithFormat:@"ID=%@ Username=%@",self.udid, self.userName] ];
+             //[self showMessage:@"Fetch Userdata" :[NSString stringWithFormat:@"ID=%@ Username=%@",self.udid, self.userName] ];
+             
+             if ( blockCode != nil )
+                 blockCode();
+             
          }];
         return ;
     }
     
     self.udid = [self.userData objectForKey:@"id"];
     self.userName = [self.userData objectForKey:@"username"];
+    if ( blockCode != nil )
+        blockCode();
     
 }
 
@@ -129,7 +108,7 @@ static FacebookBridge *instance = nil;
             
             // You may wish to show a logged in view
             //NSLog(@"FBSessionStateOpen.");
-            [self fetchUserdata];
+            [self fetchUserdata:nil];
             break;
         }
         case FBSessionStateClosed: {
@@ -180,7 +159,7 @@ static FacebookBridge *instance = nil;
     
 }
 
-- (void)login
+- (void)login:(void(^)())blockCode
 {
     
     [FBSession openActiveSessionWithReadPermissions:nil
@@ -189,15 +168,14 @@ static FacebookBridge *instance = nil;
                                                       FBSessionState state,
                                                       NSError *error) {
                                       if ( !error ) {
-                                          FB_RequestWritePermissions();
+                                          [self showMessage:@"Login Status" :@"Logined!"];
                                       }
                                       [self sessionStateChanged:session
                                                           state:state
                                                           error:error];
+                                      if ( blockCode != nil )
+                                          blockCode();
                                   }];
-    
-    [self showMessage:@"Login Status" :@"Logined!"];
-    
 }
 
 - (void)logout
@@ -224,7 +202,7 @@ static FacebookBridge *instance = nil;
                                   NSLog(@"FBRequestConnection Error:%@", [error localizedDescription] );
                               }
                           }];
-
+    
 }
 
 - (void)updateScore:(int)score

@@ -8,7 +8,7 @@
 
 #import "GVViewController.h"
 #import "GVStartViewCrl.h"
-//#import "FBFunctionViewController.h"
+#import "FBFunctionViewController.h"
 
 @interface GVViewController ()
 @property (nonatomic,strong) UIImageView *logoImageView;
@@ -63,11 +63,11 @@
     [self.view addSubview:btn];
 }
 
-//-(void) showFBTestUnit
-//{
-//    FBFunctionViewController *fbVC = [[FBFunctionViewController alloc] init];
-//    [self presentViewController:fbVC animated:YES completion:nil];
-//}
+-(void) showFBTestUnit
+{
+    FBFunctionViewController *fbVC = [[FBFunctionViewController alloc] init];
+    [self presentViewController:fbVC animated:YES completion:nil];
+}
 
 -(void) login:(id)sender{
     
