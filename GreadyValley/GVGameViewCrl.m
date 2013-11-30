@@ -22,13 +22,13 @@
     if (self) {
         // Custom initialization
         NSString *myfbid = [FacebookBridge getInstance].udid;
-        NSDictionary *dictionary = @{@"_id":@"517348050",
+        NSDictionary *dictionary = @{@"_id":myfbid,
                                      @"player_id":@"4fe9fa8d2aef4710b9000001",
                                      @"desc":@"Happiness is having a large, loving, caring, close-knit family in another city.\n\n\t\t-George Burns (1896 - 1996)",
                                      @"point":@"-10",
                                      @"url":@"//greedyvalley.com/img/20120312/4e836c8ab7293cce08000002_o.jpg"
                                      };
-        NSDictionary *dictionary2 = @{@"_id":@"517348050",
+        NSDictionary *dictionary2 = @{@"_id":myfbid,
                                      @"player_id":@"4fe9fa8d2aef4710b9000001",
                                      @"desc":@"what ever this event is\nwhat ever this event is\nwhat ever this event is",
                                      @"point":@"-10",
