@@ -7,7 +7,7 @@
 //
 
 #import "FacebookBridge.h"
-
+#import "UIImageView+AFNetworking.h"
 static FacebookBridge *instance = nil;
 @implementation FacebookBridge
 @synthesize userName;
@@ -228,6 +228,24 @@ static FacebookBridge *instance = nil;
      ];
     
 }
+
+- (void)setProfilePicture:(UIImageView*)imgView FBID:(NSString*)fbid imageSize:(CGSize)size
+{
+    NSString *photoSize = nil;
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
+        ([UIScreen mainScreen].scale == 2.0)) {
+        photoSize = [NSString stringWithFormat:@"?width=%d&height=%d", (int)size.width*2, (int)size.height*2];
+    } else {
+        photoSize = [NSString stringWithFormat:@"?width=%d&height=%d", (int)size.width, (int)size.height];
+    }
+    
+    NSString *urlString =
+    [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture%@",
+     fbid,photoSize];
+    
+    [imgView setImageWithURL:[NSURL URLWithString:urlString]];
+}
+
 
 #pragma mark ---------------- Facebook Delegates ---------------------
 
